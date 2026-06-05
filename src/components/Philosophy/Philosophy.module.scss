@@ -1,0 +1,60 @@
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/globals.scss' as global;
+@use '../../styles/typography.scss' as t;
+
+.section {
+  padding: m.rem(100) m.rem(20);
+  border-top: 1px solid var(--border);
+
+  @media (max-width: m.em(global.$mobile)) {
+    padding: m.rem(60) m.rem(20);
+  }
+}
+
+.container {
+  max-width: m.rem(global.$maxWidthContainer);
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: m.rem(16);
+  margin-bottom: m.rem(48);
+}
+
+.label {
+  @include t.caption;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.title {
+  @include t.heading-1;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: m.rem(32);
+}
+
+.content {
+  max-width: m.rem(700);
+}
+
+.text {
+  @include t.body;
+  color: var(--text-secondary);
+  margin-bottom: m.rem(16);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

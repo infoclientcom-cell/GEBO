@@ -1,0 +1,180 @@
+@use 'sass:math';
+@use './mixins.scss' as m;
+@use './variables.scss' as v;
+@use './globals.scss' as global;
+
+// ─── Размеры: desktop -> mobile ──────────────────────────────────────────
+
+$display-size: 72;
+$display-mobile: 40;
+
+$heading-1-size: 48;
+$heading-1-mobile: 32;
+
+$heading-2-size: 36;
+$heading-2-mobile: 24;
+
+$heading-3-size: 24;
+$heading-3-mobile: 20;
+
+$heading-4-size: 20;
+$heading-4-mobile: 18;
+
+$label-size: 16;
+$label-mobile: 14;
+
+$body-size: 16;
+$body-mobile: 14;
+
+$caption-size: 14;
+$caption-mobile: 12;
+
+$legal-size: 12;
+$legal-mobile: 10;
+
+// ─── Типографика ────────────────────────────────────────────────────────
+
+@mixin display($mode: adaptive) {
+  font-family: v.$font-heading;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  @if $mode == mobile {
+    font-size: m.rem($display-mobile);
+  } @else {
+    font-size: m.rem($display-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $display-size, $display-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin heading-1($mode: adaptive) {
+  font-family: v.$font-heading;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+
+  @if $mode == mobile {
+    font-size: m.rem($heading-1-mobile);
+  } @else {
+    font-size: m.rem($heading-1-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $heading-1-size, $heading-1-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin heading-2($mode: adaptive) {
+  font-family: v.$font-heading;
+  font-weight: 600;
+  line-height: 1.15;
+
+  @if $mode == mobile {
+    font-size: m.rem($heading-2-mobile);
+  } @else {
+    font-size: m.rem($heading-2-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $heading-2-size, $heading-2-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin heading-3($mode: adaptive) {
+  font-family: v.$font-heading;
+  font-weight: 600;
+  line-height: 1.2;
+
+  @if $mode == mobile {
+    font-size: m.rem($heading-3-mobile);
+  } @else {
+    font-size: m.rem($heading-3-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $heading-3-size, $heading-3-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin heading-4 {
+  font-family: v.$font-heading;
+  font-size: m.rem($heading-4-size);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@mixin label($mode: adaptive) {
+  font-family: v.$font-primary;
+  font-weight: 400;
+  line-height: 1.4;
+
+  @if $mode == mobile {
+    font-size: m.rem($label-mobile);
+  } @else {
+    font-size: m.rem($label-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $label-size, $label-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin body($mode: adaptive) {
+  font-family: v.$font-primary;
+  font-weight: 400;
+  line-height: 1.6;
+
+  @if $mode == mobile {
+    font-size: m.rem($body-mobile);
+  } @else {
+    font-size: m.rem($body-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $body-size, $body-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin caption($mode: adaptive) {
+  font-family: v.$font-primary;
+  font-weight: 400;
+  line-height: 1.4;
+
+  @if $mode == mobile {
+    font-size: m.rem($caption-mobile);
+  } @else {
+    font-size: m.rem($caption-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $caption-size, $caption-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin legal($mode: adaptive) {
+  font-family: v.$font-primary;
+  font-weight: 400;
+  line-height: 1.4;
+
+  @if $mode == mobile {
+    font-size: m.rem($legal-mobile);
+  } @else {
+    font-size: m.rem($legal-size);
+
+    @if $mode == adaptive {
+      @include m.adaptiveValue('font-size', $legal-size, $legal-mobile, 3, global.$tablet, global.$mobile);
+    }
+  }
+}
+
+@mixin mono {
+  font-family: v.$font-mono;
+  font-size: m.rem(14);
+  font-weight: 400;
+  line-height: 1.5;
+}

@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+// Настройки адаптивной сетки
+$minWidth: 320;
+$maxWidth: 1920;
+$minWidthAdaptive: 320;
+
+$maxWidthContainer: 1200;
+$containerPadding: 40;
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: $containerWidth;
+$tablet: 991.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;

@@ -1,0 +1,20 @@
+@use '@nichoth/modern-normalize/modern-normalize.css';
+@use './reset.scss';
+@use './fonts.scss';
+@use './typography.scss';
+@use './variables.scss';
+@use './mixins.scss';
+@use './globals.scss';
+
+:root {
+  --bg: #000000;
+  --bg-card: #0a0a0a;
+  --bg-card-hover: #111111;
+  --border: #1a1a1a;
+  --border-hover: #333333;
+  --text: #ffffff;
+  --text-secondary: #888888;
+  --text-muted: #555555;
+  --accent: #ffffff;
+  --accent-hover: #cccccc;
+}

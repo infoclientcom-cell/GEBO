@@ -1,0 +1,116 @@
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/globals.scss' as global;
+@use '../../styles/typography.scss' as t;
+
+.section {
+  padding: m.rem(60) m.rem(20) m.rem(100);
+  border-top: 1px solid var(--border);
+
+  @media (max-width: m.em(global.$mobile)) {
+    padding: m.rem(40) m.rem(20) m.rem(60);
+  }
+}
+
+.container {
+  max-width: m.rem(global.$maxWidthContainer);
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: m.rem(16);
+  margin-bottom: m.rem(48);
+}
+
+.label {
+  @include t.caption;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.content {
+  max-width: m.rem(640);
+  margin-bottom: m.rem(64);
+
+  @media (max-width: m.em(global.$mobile)) {
+    margin-bottom: m.rem(40);
+  }
+}
+
+.text {
+  @include t.body;
+  color: var(--text-secondary);
+  margin-bottom: m.rem(20);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: m.rem(8);
+  margin-top: m.rem(12);
+  padding: m.rem(10) m.rem(20);
+  border: 1px solid var(--border-hover);
+  border-radius: m.rem(4);
+  @include t.caption;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--text);
+    background: var(--text);
+    color: var(--bg);
+  }
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+
+  .link:hover & {
+    transform: translateX(4px);
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: m.rem(24);
+
+  @media (max-width: m.em(global.$tablet)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: m.em(global.$mobileSmall)) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat {
+  padding: m.rem(24);
+  border: 1px solid var(--border);
+  border-radius: m.rem(8);
+  display: flex;
+  flex-direction: column;
+  gap: m.rem(8);
+}
+
+.statValue {
+  @include t.heading-3;
+  color: var(--text);
+}
+
+.statLabel {
+  @include t.caption;
+  color: var(--text-muted);
+}
