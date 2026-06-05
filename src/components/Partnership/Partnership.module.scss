@@ -9,6 +9,11 @@
   @media (max-width: m.em(global.$mobile)) {
     padding: m.rem(60) m.rem(20);
   }
+
+  @media (max-width: m.em(600)) {
+    padding-left: m.rem(10);
+    padding-right: m.rem(10);
+  }
 }
 
 .container {
@@ -48,7 +53,7 @@
 .desc {
   @include t.body;
   color: var(--text-secondary);
-  max-width: m.rem(640);
+  max-width: 100%;
   margin-bottom: m.rem(48);
 }
 
@@ -70,6 +75,10 @@
 
   &:hover {
     border-color: var(--border-hover);
+  }
+
+  @media (max-width: m.em(600)) {
+    width: 100%;
   }
 }
 

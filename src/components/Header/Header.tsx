@@ -1,16 +1,29 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import s from './Header.module.scss';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Technologies', href: '#technologies' },
-  { label: 'Partnership', href: '#partnership' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', hash: '#about' },
+  { label: 'Projects', hash: '#projects' },
+  { label: 'Technologies', hash: '#technologies' },
+  { label: 'Partnership', hash: '#partnership' },
+  { label: 'Contact', hash: '#contact' },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const handleNav = (hash: string) => {
+    setMenuOpen(false);
+    if (pathname !== '/') {
+      navigate('/' + hash);
+    } else {
+      const el = document.querySelector(hash);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className={s.header}>
@@ -24,16 +37,20 @@ export default function Header() {
 
         <nav className={s.navDesktop}>
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={s.navLink}>
+            <button
+              key={link.hash}
+              className={s.navLink}
+              onClick={() => handleNav(link.hash)}
+            >
               {link.label}
-            </a>
+            </button>
           ))}
         </nav>
 
-        <a href="#contact" className={s.cta}>
+        <button className={s.cta} onClick={() => handleNav('#contact')}>
           Contact Us
           <span className={s.arrow}>&rarr;</span>
-        </a>
+        </button>
 
         <button
           className={`${s.burger} ${menuOpen ? s.burgerOpen : ''}`}
@@ -49,14 +66,13 @@ export default function Header() {
       {menuOpen && (
         <div className={s.mobileMenu}>
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <button
+              key={link.hash}
               className={s.mobileLink}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => handleNav(link.hash)}
             >
               {link.label}
-            </a>
+            </button>
           ))}
         </div>
       )}

@@ -5,6 +5,11 @@
 .footer {
   padding: m.rem(64) m.rem(20) m.rem(32);
   border-top: 1px solid var(--border);
+
+  @media (max-width: m.em(600)) {
+    padding-left: m.rem(10);
+    padding-right: m.rem(10);
+  }
 }
 
 .container {
@@ -24,8 +29,9 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (max-width: m.em(global.$mobileSmall)) {
+  @media (max-width: m.em(600)) {
     grid-template-columns: 1fr;
+    justify-items: start;
   }
 }
 

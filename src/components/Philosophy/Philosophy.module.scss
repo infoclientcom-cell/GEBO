@@ -9,6 +9,11 @@
   @media (max-width: m.em(global.$mobile)) {
     padding: m.rem(60) m.rem(20);
   }
+
+  @media (max-width: m.em(600)) {
+    padding-left: m.rem(10);
+    padding-right: m.rem(10);
+  }
 }
 
 .container {
@@ -46,7 +51,7 @@
 }
 
 .content {
-  max-width: m.rem(700);
+  max-width: 100%;
 }
 
 .text {

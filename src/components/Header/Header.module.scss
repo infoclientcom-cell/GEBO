@@ -60,10 +60,10 @@
 
 .mobileMenu {
   position: fixed;
-  top: 0;
+  top: m.rem(57);
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - #{m.rem(57)});
   background: #000;
   z-index: 250;
   display: flex;
@@ -72,7 +72,7 @@
   align-items: center;
   gap: m.rem(40);
   overflow-y: auto;
-  padding: m.rem(80) m.rem(20);
+  padding: m.rem(40) m.rem(20);
 }
 
 .mobileLink {

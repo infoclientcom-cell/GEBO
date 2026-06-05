@@ -9,6 +9,11 @@
   @media (max-width: m.em(global.$mobile)) {
     padding: m.rem(40) m.rem(20) m.rem(60);
   }
+
+  @media (max-width: m.em(600)) {
+    padding-left: m.rem(10);
+    padding-right: m.rem(10);
+  }
 }
 
 .container {
@@ -39,7 +44,7 @@
 }
 
 .content {
-  max-width: m.rem(640);
+  max-width: 100%;
   margin-bottom: m.rem(64);
 
   @media (max-width: m.em(global.$mobile)) {
@@ -91,7 +96,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: m.em(global.$mobileSmall)) {
+  @media (max-width: m.em(600)) {
     grid-template-columns: 1fr;
   }
 }
