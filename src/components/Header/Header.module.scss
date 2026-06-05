@@ -26,14 +26,14 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: m.rem(10);
-  font-family: v.$font-heading;
-  font-size: m.rem(20);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--text);
   position: relative;
   z-index: 300;
+}
+
+.logoImg {
+  height: m.rem(50);
+  width: auto;
+  object-fit: contain;
 }
 
 .navDesktop {

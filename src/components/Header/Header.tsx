@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import s from './Header.module.scss';
+import logo from '../../assets/icon-company.webp';
 
 const navLinks = [
   { label: 'About', hash: '#about' },
@@ -29,10 +30,7 @@ export default function Header() {
     <header className={s.header}>
       <div className={s.container}>
         <a href="/" className={s.logo}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 4.5L16.5 13H20l-3.5 7H13z" fill="currentColor"/>
-          </svg>
-          GEBO
+          <img src={logo} alt="GEBO" className={s.logoImg} />
         </a>
 
         <nav className={s.navDesktop}>

@@ -1,12 +1,12 @@
 import s from './Projects.module.scss';
 
-import imgStt from '../../assets/stt.market.jpg';
-import imgIqPump from '../../assets/iq-pump.jpg';
-import imgWinWin from '../../assets/win.stt.market.jpg';
-import imgMooMine from '../../assets/moo-mine.jpg';
-import imgNtStake from '../../assets/nt-stake.jpg';
-import imgJarald from '../../assets/Jarald.jpg';
-import imgLegacy from '../../assets/Legacy.jpg';
+import imgStt from '../../assets/stt.market.webp';
+import imgIqPump from '../../assets/iq-pump.webp';
+import imgWinWin from '../../assets/win.stt.market.webp';
+import imgMooMine from '../../assets/moo-mine.webp';
+import imgNtStake from '../../assets/nt-stake.webp';
+import imgJarald from '../../assets/Jarald.webp';
+import imgLegacy from '../../assets/Legacy.webp';
 
 interface Project {
   name: string;
